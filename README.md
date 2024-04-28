@@ -48,7 +48,9 @@ on Google.  Here is how to do that as of April, 2024, and configure this module:
 13. If you encounter problems redirecting to Google when you press the 'Get Refresh Token' button,
     you may need to add the following to your settings.php file:
 
+```php
     $settings['trusted_host_patterns'] = ['^accounts\.google\.com$'];
+```
 
     If you have other trusted_host_patterns, add '^accounts\.google\.com$' to the array.
 
