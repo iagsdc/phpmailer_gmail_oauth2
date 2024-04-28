@@ -61,7 +61,7 @@ A few other setup items:
     bottom of the same page in (1) above.
 
 3.  On the PHPMailer SMTP transport settings page, select 'Gmail OAuth2' as your SMTP authentication method
-    (/admin/config/system/phpmailer-smtp).
+    (/admin/config/system/phpmailer-smtp).  Set the SMTP port to 587, and select TLS as the secure protocol.
 
 You can use the 'Test configuration' service on the PHPMailer SMTP transport settings page to verify that
 the new configuration is working by sending a test email.
