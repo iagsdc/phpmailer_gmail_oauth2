@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# phpmailer_gmail_oauth2
-Drupal 10 module designed as GMail Oauth2 plugin for PHPMailer SMTP module
-=======
 This module is meant to be a plugin that works with the PHPMailer SMTP module,
 authentication to Google Workspace Gmail via OAuth2.  
 
@@ -43,4 +39,3 @@ A few other setup items:
 
 You can use the 'Test configuration' service on the PHPMailer SMTP transport settings page to verify that
 the new configuration is working.
->>>>>>> 1681d84 (Initial Commit)
