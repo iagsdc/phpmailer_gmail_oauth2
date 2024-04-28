@@ -119,7 +119,6 @@ class GmailOauth2SettingsForm extends ConfigFormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
 
         $values = $form_state->getValues();
-        \Drupal::logger('GmailOauth2SettingsForm')->notice("values: " . print_r($values, True));
 
         // Save the configuration changes.
         $config = $this->configFactory()->getEditable('phpmailer_gmail_oauth2.gmail_settings');
@@ -132,9 +131,7 @@ class GmailOauth2SettingsForm extends ConfigFormBase {
         }
 
         $config->save();
-        \Drupal::logger('GmailOauth2SettingsForm')->notice("config saved");
 
         parent::submitForm($form, $form_state);
-        \Drupal::logger('GmailOauth2SettingsForm')->notice("parent submitted");
     }
 }
