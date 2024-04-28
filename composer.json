@@ -1,0 +1,23 @@
+{
+    "name": "drupal/phpmailer_gmail_oauth2",
+    "description": "A Drupal module for handling Gmail OAuth2 authentication via PHPMailer.",
+    "type": "drupal-module",
+    "version": "1.0.0-alpha1",
+    "require": {
+        "drupal/core": "^9|^10",
+        "league/oauth2-google": "^4.0",
+        "drupal/phpmailer_smtp": "^2.2.5",
+    },
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Fred Loehr",
+            "email": "loehrfred@gmail.com",
+            "role": "Sofware Engineer"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/iagsdc/phpmailer_gmail_oauth2"
+    }
+  "keywords": ["drupal", "phpmailer", "smtp", "email", "mail", "mailsystem", "mail system", "oauth2", "gmail", "google"]
+}

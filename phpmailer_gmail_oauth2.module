@@ -5,6 +5,9 @@
  */
 function phpmailer_gmail_oauth2_update_projects_alter(&$projects) {
 
-    // remove the phpmailer_gmail_oauth2 module from the update status report
+    // if you want to see phpmailer_gmail_oauth2 in the update status report,
+    // you can safely delete this function, or delete this entire file.
+
+    // remove the phpmailer_gmail_oauth2 module from the update status report.
     unset($projects['phpmailer_gmail_oauth2']);
 }

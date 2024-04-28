@@ -9,27 +9,26 @@ use PHPMailer\PHPMailer\OAuth;
 use League\OAuth2\Client\Provider\Google;
 
 /**
- * Helper to generate a new Gmail provider.
+ * Helper to generate a new Google Gmail provider
  */
 class GmailProviderService {
 
     /**
-     * Config factory.
+     * Config factory
      *
      * @var \Drupal\Core\Config\ConfigFactoryInterface
      */
     protected $configFactory;
 
     /**
-    /**
-     * The request stack.
+     * The request stack
      *
      * @var \Symfony\Component\HttpFoundation\RequestStack
      */
     protected $requestStack;
 
     /**
-     * The constructor.
+     * The constructor
      *
      * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
      *   The config factory.
@@ -43,14 +42,13 @@ class GmailProviderService {
     }
 
     /**
-     * Create a new provider for SMTP Auth
+     * Create a new Google provider for SMTP Auth
      *
      * @return object
-     *   The Gmail provider
+     *   The Google provider
      */
     public function getProvider() {
 
-        \Drupal::logger('GmailProviderService')->notice("getProvider()");
         $config = $this->configFactory->get('phpmailer_gmail_oauth2.gmail_settings');
 
         $params = [
@@ -60,8 +58,6 @@ class GmailProviderService {
             'accessType'   => 'offline',
             'prompt'       => 'consent',
         ];
-        #   'redirectUri'  => Url::fromRoute('phpmailer_gmail_oauth2.gmail_callback')->setAbsolute()->toString(),
-        #   'redirectUri'  => 'https://sandbox.iagsdc.org/phpmailer_oauth2/gmail-callback',
 
         return new Google($params);
     }
@@ -70,7 +66,7 @@ class GmailProviderService {
      * Get provider options array
      *
      * @return array
-     *   Array of Gmail provider options
+     *   Array of Google provider options
      */
     public function getOptions() {
 
@@ -82,14 +78,13 @@ class GmailProviderService {
     }
 
     /**
-     * Get OAuth options for PHPMailer OAuth.
+     * Get OAuth options
      *
      * @return array
      *   PHPMailer auth options
      */
     public function getAuthOptions() {
 
-        \Drupal::logger('GmailProviderService')->notice("getOAuthOptions()");
         $config = $this->configFactory->get('phpmailer_gmail_oauth2.gmail_settings');
         return [
             'provider'     => $this->getProvider(),

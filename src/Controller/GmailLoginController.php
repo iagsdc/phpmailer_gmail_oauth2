@@ -62,7 +62,7 @@ class GmailLoginController extends ControllerBase {
      * Login
      *
      * @return \Drupal\Core\Routing\TrustedRedirectResponse
-     *   Redirect to Google authorizatio login page
+     *   Redirect to Google authorization login page
      */
     public function login() {
 

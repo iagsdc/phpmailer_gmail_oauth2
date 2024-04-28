@@ -26,7 +26,7 @@ class GmailOauth2CallbackController extends ControllerBase {
     protected $requestStack;
 
     /**
-     * The config factory.
+     * The config factory
      *
      * @var \Drupal\Core\Config\ConfigFactoryInterface
      */
@@ -77,7 +77,7 @@ class GmailOauth2CallbackController extends ControllerBase {
      *   The request
      *
      * @return mixed
-     *   A redirect to the settings page
+     *   Redirect to the settings page
      *
      */
     public function callback(Request $request) {
@@ -97,7 +97,7 @@ class GmailOauth2CallbackController extends ControllerBase {
                 ]
             );
 
-            // get a new access token 
+            // get new refresh token and save it
             $myToken = $token->getRefreshToken();
             $config  = $this->configFactory->getEditable('phpmailer_gmail_oauth2.gmail_settings');
             $config->set('gm_refresh_access_token', $myToken);

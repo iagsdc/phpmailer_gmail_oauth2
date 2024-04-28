@@ -18,7 +18,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class GmailOauth2 extends PhpmailerOauth2PluginBase implements ContainerFactoryPluginInterface {
 
     /**
-     * The Gmail provider service.
+     * The Gmail provider service
      *
      * @var \Drupal\phpmailer_gmail_oauth2\Service\GmailProviderService
      */

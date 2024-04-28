@@ -3,6 +3,7 @@
 namespace Drupal\phpmailer_gmail_oauth2\Form;
 
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
@@ -11,59 +12,9 @@ use Drupal\Core\Mail\MailManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Defines a form to configure PHPMailer SMTP OAuth2 settings.
+ * Form to gather and store Gmail OAuth2 parameters
  */
 class GmailOauth2SettingsForm extends ConfigFormBase {
-
-    /**
-     * The mail manager.
-     *
-     * @var \Drupal\Core\Mail\MailManagerInterface
-     */
-    protected $mailManager;
-
-    /**
-     * The language manager.
-     *
-     * @var \Drupal\Core\Language\LanguageManagerInterface
-     */
-    protected $languageManager;
-
-    /**
-     * The module handler.
-     *
-     * @var \Drupal\Core\Extension\ModuleHandlerInterface
-     */
-    protected $moduleHandler;
-
-    /**
-     * Constructor.
-     *
-     * @param \Drupal\Core\Mail\MailManagerInterface $mail_manager
-     *   The mail manager.
-     * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
-     *   The language manager.
-     * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
-     *   The module handler.
-     */
-    public function __construct(MailManagerInterface $mail_manager, LanguageManagerInterface $language_manager, ModuleHandlerInterface $module_handler) {
-
-        $this->mailManager = $mail_manager;
-        $this->languageManager = $language_manager;
-        $this->moduleHandler = $module_handler;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function create(ContainerInterface $container) {
-
-        return new static(
-            $container->get('plugin.manager.mail'),
-            $container->get('language_manager'),
-            $container->get('module_handler')
-        );
-    }
 
     /**
      * {@inheritdoc}
@@ -100,7 +51,7 @@ class GmailOauth2SettingsForm extends ConfigFormBase {
 
         $form['gm_auth'] = [
             '#type'          => 'details',
-            '#title'         => $this->t('Gmail AD OAuth2'),
+            '#title'         => $this->t('Gmail OAuth2'),
             '#open'          => True,
         ];
 
@@ -119,7 +70,7 @@ class GmailOauth2SettingsForm extends ConfigFormBase {
                                          'Google, where you will sign in and follow the instructions. Assuming everything goes smoothly, you should eventually '    .
                                          'be redirected back to this page, where the <strong>Refresh Token</strong> will display in a message at the top of the  '  .
                                          'page.</p><p>There is no need to remember the token; it is only displayed to let you know it was received. Once you have ' .
-                                         'the Token, your setup is complete and email should work.'),
+                                         'the Token, your setup is complete and email should work. Complete the setup on the Mail System and PHPMailer SMTP pages'),
         ];
 
     

@@ -2,25 +2,25 @@ phpmailer_gmail_oauth2.gmail_settings:
   path: '/admin/config/system/phpmailer-gmail-oauth2'
   defaults:
     _form: '\Drupal\phpmailer_gmail_oauth2\Form\GmailOauth2SettingsForm'
-    _title: 'Configure PHPMailer Gmail OAuth2 settings'
+    _title: 'Gather and store Gmail OAuth2 parameters'
   requirements:
     _permission: 'administer phpmailer gmail_oauth2 settings'
 
-#   _title: 'AAD OAuth2 SMTP callback'
 phpmailer_gmail_oauth2.gmail_callback:
   path: '/phpmailer_oauth2/gmail-callback'
   defaults:
     _controller: '\Drupal\phpmailer_gmail_oauth2\Controller\GmailOauth2CallbackController::callback'
+    _title: 'Gmail OAuth2 SMTP callback'
   requirements:
     _permission: 'administer phpmailer gmail_oauth2 settings'
   options:
     no_cache: TRUE
 
-#   _title: 'AAD Login'
 phpmailer_gmail_oauth2.gmail_login:
   path: '/phpmailer_oauth2/gmail-login'
   defaults:
     _controller: 'Drupal\phpmailer_gmail_oauth2\Controller\GmailLoginController::login'
+    _title: 'Gmail Login'
   requirements:
     _permission: 'administer phpmailer gmail_oauth2 settings'
   options:
