@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_update_projects_alter()
+ */
+function phpmailer_gmail_oauth2_update_projects_alter(&$projects) {
+
+    // remove the phpmailer_gmail_oauth2 module from the update status report
+    unset($projects['phpmailer_gmail_oauth2']);
+}

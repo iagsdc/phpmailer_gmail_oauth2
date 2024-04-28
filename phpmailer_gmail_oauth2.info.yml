@@ -1,0 +1,12 @@
+name: PHPMailer Gmail OAuth2
+description: OAuth2 Gmail client for PHPMailer SMTP
+type: module
+package: Mail
+core_version_requirement: ^9 || ^10
+dependencies:
+  - phpmailer_smtp:phpmailer_smtp
+
+# Information added by Drupal.org packaging script on 2023-06-26
+version: '1.0.0-alpha1'
+project: 'phpmailer_gmail_oauth2'
+datestamp: 1687757719
