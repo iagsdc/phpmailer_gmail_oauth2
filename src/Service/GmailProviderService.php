@@ -21,24 +21,14 @@ class GmailProviderService {
     protected $configFactory;
 
     /**
-     * The request stack
-     *
-     * @var \Symfony\Component\HttpFoundation\RequestStack
-     */
-    protected $requestStack;
-
-    /**
      * The constructor
      *
      * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
      *   The config factory.
-     * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
-     *   The request stack.
      */
-    public function __construct(ConfigFactoryInterface $config_factory, RequestStack $request_stack) {
+    public function __construct(ConfigFactoryInterface $config_factory) {
 
         $this->configFactory = $config_factory;
-        $this->requestStack  = $request_stack;
     }
 
     /**
