@@ -2,7 +2,7 @@ name: PHPMailer Gmail OAuth2
 description: OAuth2 Gmail client for PHPMailer SMTP
 type: module
 package: Mail
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9.4 || ^10
 dependencies:
   - phpmailer_smtp:phpmailer_smtp
 
