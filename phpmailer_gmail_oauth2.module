@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Routing\RouteMatchInterface;
+
 /**
  * Implements hook_update_projects_alter()
  */
@@ -10,4 +12,21 @@ function phpmailer_gmail_oauth2_update_projects_alter(&$projects) {
 
     // remove the phpmailer_gmail_oauth2 module from the update status report.
     unset($projects['phpmailer_gmail_oauth2']);
+}
+
+/**
+ * implements hook_help()
+ */
+function phpmailer_gmail_oauth2_help(string $route_name, RouteMatchInterface $route_match): ?array {
+
+    $build = [];
+    if($route_name === 'help.page.phpmailer_gmail_oauth2') {
+        $readme_content = file_get_contents(__DIR__ . '/README.md');
+        $build = [
+            '#type' => 'html_tag',
+            '#tag' => 'pre',
+            '#value' => $readme_content,
+        ];
+    }
+    return $build;
 }
